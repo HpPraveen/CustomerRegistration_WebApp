@@ -9,7 +9,7 @@ import { CustomerService } from 'src/app/Services/CustomerService';
   styleUrls: ['./customer-list.component.scss']
 })
 export class CustomerListComponent implements OnInit {
-
+  customerList: Customer[] = [];
   constructor(public customerService: CustomerService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -35,5 +35,9 @@ export class CustomerListComponent implements OnInit {
     }
   }
 
+  search(){
+    var searchTxt = ((document.getElementById("searchTxt") as HTMLInputElement).value);
+    this.customerService.SearchCustomers(searchTxt);
+  }
 
 }

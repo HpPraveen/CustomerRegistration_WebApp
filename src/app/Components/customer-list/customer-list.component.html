@@ -10,6 +10,15 @@
   <div class="col-md-8" style="overflow-y:scroll">
     <h5 class="text-left"><u>All Customers</u></h5>
     <br>
+    <div class="row">
+      <div class="col-md-10">
+        <input type="text"  id="searchTxt" class="form-control form-control-sm" placeholder="Search by name">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-warning btn-sm btn-block" type="submit" (click)="search()">Search</button>
+      </div>
+
+    </div>
     <table class="table">
       <thead class="thead-light">
         <tr>

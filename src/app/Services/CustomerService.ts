@@ -28,7 +28,10 @@ export class CustomerService {
   }
 
   SearchCustomers(name: string) {
-    return this.http.get(`${this.baseURL}/${name}`);
+    debugger
+    this.http.get(`${this.baseURL}/${name}`)
+      .toPromise()
+      .then(res =>this.customerList = res as Customer[]);
   }
 
   CreateCustomer() {
@@ -48,6 +51,5 @@ export class CustomerService {
     this.http.get(this.baseURL)
       .toPromise()
       .then(res =>this.customerList = res as Customer[]);
-      var c = this.customerList;
   }
 }
